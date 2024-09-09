@@ -1,11 +1,10 @@
 import styles from './styles.module.css';
 import { useState } from 'react';
+import { Expression } from '../../lib/logica-calculadora.js';
 
 export default function Calculadora() {
     const [input, setInput] = useState('');
     const [table, setTable] = useState([]);
-    const resultArray = []
-    const [expressionsResult, setExpressionsResult] = useState([])
 
     const handleClick = (value) => {
         setInput(input + value);
@@ -21,123 +20,36 @@ export default function Calculadora() {
     }
 
     const handleEvaluate = () => {
-
         console.log(solve(input))
         setTable(solve(input))
     };
 
-    class Expression {
-        constructor(textExpression) {
-            this.textExpression = textExpression;
-            this.possibleVariables = extractUniqueLetters(textExpression)
-            this.resultArray = []
-        }
-
-        _getLogicValues() {
-            var currentFactor = (2 ** this.possibleVariables.length) / 2;
-            var currentCounter = 0;
-            var pushZeros = true;
-            var result = {};
-            for (let letter of this.possibleVariables) {
-                var tempArray = [];
-                for (let i = 0; i < 2 ** this.possibleVariables.length; i++) {
-                    if (currentCounter >= currentFactor) {
-                        currentCounter = 0;
-                        pushZeros = !pushZeros;
-                    }
-
-                    if (pushZeros) {
-                        tempArray.push(0);
-                    } else {
-                        tempArray.push(1);
-                    }
-                    currentCounter++;
-                }
-                currentFactor /= 2;
-                result[letter] = tempArray;
-            }
-            return result;
-        }
-
-        _replaceOperators(textExpression) {
-            textExpression = textExpression.replace(/~/g, '!');  // not
-            textExpression = textExpression.replace(/∧/g, '&&'); // and
-            textExpression = textExpression.replace(/∨/g, '||'); // or
-            textExpression = textExpression.replace(/↔/g, ' == '); // equivalent
-            textExpression = textExpression.replace(/→/g, ' <= '); // implies
-            textExpression = textExpression.replace(/\+/g, ' !== '); // xor (different)
-            return textExpression;
-        }
-
-        solve() {
-            var logicValues = this._getLogicValues();
-
-            for (let i = 0; i < 2 ** this.possibleVariables.length; i++) {
-                var tempExpression = this.textExpression;
-                var tempDict = {}
-
-                Object.keys(logicValues).forEach(function (key) {
-                    tempExpression = tempExpression.replace(new RegExp(key, 'g'), logicValues[key][i]);
-                    tempDict[key] = logicValues[key][i];
-                })
-
-                tempExpression = this._replaceOperators(tempExpression);
-
-                try {
-                    var evaluatedResult = eval(tempExpression) ? 'V' : 'F';
-                    tempDict["Result"] = evaluatedResult;
-                } catch (e) {
-                    console.log("Erro: " + e);
-                    tempDict["Result"] = "Erro";
-                }
-                this.resultArray.push(tempDict);
-            }
-
-            return this.resultArray;
-        }
-    }
-
     function solve(exp) {
         var expObj = new Expression(exp);
-        // resultado final
         return expObj.solve()
-    }
-
-    function extractUniqueLetters(inputString) {
-        // Create a regular expression that matches all letters (case-insensitive)
-        const regex = /[a-zA-Z]/g;
-        // Use the match method to find all letters in the string
-        const lettersArray = inputString.match(regex);
-
-        // If lettersArray is null, return an empty array
-        if (!lettersArray) return [];
-
-        // Create a Set from the array to remove duplicates, then convert it back to an array
-        const uniqueLettersSet = new Set(lettersArray.map(letter => letter.toLowerCase()));
-        return Array.from(uniqueLettersSet);
     }
 
     return (
         <div className={styles.container_pai}>
             <div className={styles.container}>
                 <h1>Tabela Verdade Online</h1>
-                <input value={input} readOnly className={styles.input} />
+                <input value={input} type='text' className={styles.input} onChange={(e) => setInput(e.target.value)}/>
                 <div className={styles.container_btn}>
                     <button className={`${styles.red_btn}`} onClick={handleClear}>AC</button>
                     <button className={`${styles.red_btn}`} onClick={handleDelete}>DEL</button>
                     <button className={`${styles.evaluate_btn}`} onClick={handleEvaluate}>=</button>
                 </div>
                 <div className={styles.container_btn}>
-                    <button className={styles.btn} onClick={() => handleClick('a')}>A</button>
-                    <button className={styles.btn} onClick={() => handleClick('b')}>B</button>
-                    <button className={styles.btn} onClick={() => handleClick('c')}>C</button>
-                    <button className={styles.btn} onClick={() => handleClick('d')}>D</button>
-                    <button className={styles.btn} onClick={() => handleClick('e')}>E</button>
-                    <button className={styles.btn} onClick={() => handleClick('f')}>F</button>
-                    <button className={styles.btn} onClick={() => handleClick('g')}>G</button>
-                    <button className={styles.btn} onClick={() => handleClick('h')}>H</button>
-                    <button className={styles.btn} onClick={() => handleClick('i')}>I</button>
-                    <button className={styles.btn} onClick={() => handleClick('j')}>J</button>
+                    <button className={styles.btn} onClick={() => handleClick('A')}>A</button>
+                    <button className={styles.btn} onClick={() => handleClick('B')}>B</button>
+                    <button className={styles.btn} onClick={() => handleClick('C')}>C</button>
+                    <button className={styles.btn} onClick={() => handleClick('D')}>D</button>
+                    <button className={styles.btn} onClick={() => handleClick('E')}>E</button>
+                    <button className={styles.btn} onClick={() => handleClick('F')}>F</button>
+                    <button className={styles.btn} onClick={() => handleClick('G')}>G</button>
+                    <button className={styles.btn} onClick={() => handleClick('H')}>H</button>
+                    <button className={styles.btn} onClick={() => handleClick('I')}>I</button>
+                    <button className={styles.btn} onClick={() => handleClick('J')}>J</button>
 
                 </div>
                 <div className={styles.container_btn}>
@@ -161,7 +73,6 @@ export default function Calculadora() {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* Itera sobre as linhas da tabela */}
                         {table.map((row, index) => (
                             <tr className={styles.tr} key={index}>
                                 {Object.values(row).map((value, index) => (

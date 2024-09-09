@@ -27,7 +27,10 @@
     border: none;
     border-radius: 10px;
     margin: 10px 0px 5px 0px;
+    padding: 30px;
     text-align: center;
+    font-size: 24px;
+    color: rgb(80, 80, 80);
 }
 .container_btn{
     width: 360px;
@@ -35,6 +38,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 5px;
+    margin: 0 auto;
 }
 
 .btn, .red_btn, .evaluate_btn {
