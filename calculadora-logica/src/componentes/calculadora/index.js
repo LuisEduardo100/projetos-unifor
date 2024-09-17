@@ -5,6 +5,7 @@ import { Expression } from '../../lib/logica-calculadora.js';
 export default function Calculadora() {
     const [input, setInput] = useState('');
     const [table, setTable] = useState([]);
+    const [classification, setClassification] = useState([]);
 
     const handleClick = (value) => {
         setInput(input + value);
@@ -22,6 +23,7 @@ export default function Calculadora() {
     const handleEvaluate = () => {
         console.log(solve(input))
         setTable(solve(input))
+        classifyProposition(setClassification(table))
     };
 
     function solve(exp) {
@@ -29,11 +31,23 @@ export default function Calculadora() {
         return expObj.solve()
     }
 
+    function classifyProposition(table) {
+        const results = table.map(row => row.Result)
+
+        if (results.every(result => result === 'V')) {
+            return 'Tautologia'
+        } else if (results.every(result => result === 'F')) {
+            return 'Contingência'
+        } else {
+            return 'Contradição'
+        }
+    }
+
     return (
         <div className={styles.container_pai}>
             <div className={styles.container}>
                 <h1>Tabela Verdade Online</h1>
-                <input value={input} type='text' className={styles.input} onChange={(e) => setInput(e.target.value)}/>
+                <input value={input} type='text' className={styles.input} onChange={(e) => setInput(e.target.value)} />
                 <div className={styles.container_btn}>
                     <button className={`${styles.red_btn}`} onClick={handleClear}>AC</button>
                     <button className={`${styles.red_btn}`} onClick={handleDelete}>DEL</button>
@@ -78,8 +92,8 @@ export default function Calculadora() {
                                 {Object.values(row).map((value, index) => (
                                     <td className={styles.td} key={index}>{
                                         value.toString() === "0" ? "F" :
-                                        value.toString() === "1" ? "V" : 
-                                        value.toString()
+                                            value.toString() === "1" ? "V" :
+                                                value.toString()
                                     }</td>
                                 ))}
                             </tr>
@@ -87,6 +101,9 @@ export default function Calculadora() {
                     </tbody>
                 </table>
             )}
+            <div className={styles.classification}>
+                <h3>Classificação: {classification}</h3>
+            </div>
         </div>
     )
 }
