@@ -5,7 +5,7 @@ import { Expression } from '../../lib/logica-calculadora.js';
 export default function Calculadora() {
     const [input, setInput] = useState('');
     const [table, setTable] = useState([]);
-    const [classification, setClassification] = useState([]);
+    const [classification, setClassification] = useState('');
 
     const handleClick = (value) => {
         setInput(input + value);
@@ -18,12 +18,13 @@ export default function Calculadora() {
     const handleClear = () => {
         setInput('')
         setTable([])
+        setClassification('')
     }
 
     const handleEvaluate = () => {
         console.log(solve(input))
         setTable(solve(input))
-        classifyProposition(setClassification(table))
+        setClassification(classifyProposition(solve(input)))
     };
 
     function solve(exp) {
@@ -37,9 +38,9 @@ export default function Calculadora() {
         if (results.every(result => result === 'V')) {
             return 'Tautologia'
         } else if (results.every(result => result === 'F')) {
-            return 'Contingência'
-        } else {
             return 'Contradição'
+        } else {
+            return 'Contingência'
         }
     }
 
@@ -78,7 +79,13 @@ export default function Calculadora() {
                 </div>
             </div>
             {table.length > 0 && (
+                <div className={styles.classification}> 
+                    <h3>Classificação: {classification}</h3>
+                </div>
+            )}
+            {table.length > 0 && (
                 <table className={styles.table}>
+
                     <thead>
                         <tr className={styles.tr}>
                             {Object.keys(table[0]).map((key) => (
@@ -102,7 +109,6 @@ export default function Calculadora() {
                 </table>
             )}
             <div className={styles.classification}>
-                <h3>Classificação: {classification}</h3>
             </div>
         </div>
     )

@@ -1,12 +1,15 @@
-.container_pai{
+.container_pai {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 25px;
+    padding: 20px; 
+    max-height: 100vh; 
+    overflow-y: auto;  
 }
 
-.container{
+.container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -17,9 +20,11 @@
     width: 100%;
     font-size: 0.6rem;
     border-radius: 10px;
+    max-width: 420px;  
+    overflow: hidden; 
 }
 
-.input{
+.input {
     width: 360px;
     height: 45px;
     background-color: #D1D1D1;
@@ -27,12 +32,15 @@
     border: none;
     border-radius: 10px;
     margin: 10px 0px 5px 0px;
-    padding: 30px;
-    text-align: center;
+    padding: 10px;  
     font-size: 24px;
     color: rgb(80, 80, 80);
+    overflow-x: auto; 
+    white-space: nowrap;  
+    text-align: left;  
 }
-.container_btn{
+
+.container_btn {
     width: 360px;
     display: flex;
     justify-content: center;
@@ -49,7 +57,7 @@
     cursor: pointer;
 }
 
-.red_btn{
+.red_btn {
     color: red;
     font-weight: bold;
     flex-basis: 85px;
@@ -65,7 +73,7 @@
     border: 1px solid rgb(128, 128, 128);
     box-shadow: 0px -4px 10px 5px inset rgba(156, 156, 156, 0.438);
 }
-.evaluate_btn{
+.evaluate_btn {
     flex: 1;
     color: #4CAF50;
     font-weight: bold;
@@ -81,7 +89,7 @@
     border: 1px solid rgb(128, 128, 128);
     box-shadow: 0px -4px 10px 5px inset rgba(156, 156, 156, 0.438);
 }
-.btn{
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,9 +104,9 @@
     box-shadow: 0px -4px 10px 5px inset rgba(156, 156, 156, 0.438);
 }
 
-.table{
+.table {
     max-width: 100%;
-    height: 400px;
+    max-height: 300px; 
     display: block;
     overflow-y: auto;
     overflow-x: auto;
@@ -125,7 +133,9 @@
     color: white;
     text-align: center;
 }
-
+.classification{
+    text-align: center;
+}
 /* Ajustes responsivos */
 @media (max-width: 420px) {
     .container_pai {
