@@ -1,0 +1,92 @@
+[
+	{
+		"pergunta": "Se você tem 54 balas e seu amigo te dá mais 26 balas, quantas balas você terá no total?",
+		"opcoes": {
+			"a": "70 balas",
+			"b": "80 balas",
+			"c": "90 balas"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se você tem 235 figurinhas e dá 40 para seu irmão, quantas figurinhas você ainda tem?",
+		"opcoes": {
+			"a": "148 figurinhas",
+			"b": "152 figurinhas",
+			"c": "195 figurinhas"
+		},
+		"resposta_verdadeira": "c"
+	},
+	{
+		"pergunta": "Se você tem 60 reais e compra um livro por 25 reais, quanto sobra?",
+		"opcoes": {
+			"a": "30 reais",
+			"b": "35 reais",
+			"c": "40 reais"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se você tem 180 lápis e perde 56 deles, quantos lápis ainda tem?",
+		"opcoes": {
+			"a": "124 lápis",
+			"b": "136 lápis",
+			"c": "150 lápis"
+		},
+		"resposta_verdadeira": "a"
+	},
+	{
+		"pergunta": "Se cada pacote de canetas tem 24 canetas e você compra 5 pacotes, quantas canetas você terá?",
+		"opcoes": {
+			"a": "110 canetas",
+			"b": "115 canetas",
+			"c": "120 canetas"
+		},
+		"resposta_verdadeira": "c"
+	},
+	{
+		"pergunta": "Se você tem 350 reais e gasta 120 reais em uma bicicleta, quanto dinheiro sobra?",
+		"opcoes": {
+			"a": "210 reais",
+			"b": "230 reais",
+			"c": "240 reais"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se uma caixa tem 150 chocolates e você come 30 deles, quantos chocolates ainda restam?",
+		"opcoes": {
+			"a": "90 chocolates",
+			"b": "110 chocolates",
+			"c": "120 chocolates"
+		},
+		"resposta_verdadeira": "c"
+	},
+	{
+		"pergunta": "Se você tem 480 figurinhas e dá 150 para seus amigos, quantas figurinhas sobram com você?",
+		"opcoes": {
+			"a": "290 figurinhas",
+			"b": "320 figurinhas",
+			"c": "330 figurinhas"
+		},
+		"resposta_verdadeira": "c"
+	},
+	{
+		"pergunta": "Se você tem 75 reais e sua mãe te dá mais 50 reais de mesada, quanto dinheiro você terá?",
+		"opcoes": {
+			"a": "115 reais",
+			"b": "125 reais",
+			"c": "135 reais"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se cada caixa de lápis de cor tem 36 lápis e você compra 2 caixas, quantos lápis de cor você terá ao todo?",
+		"opcoes": {
+			"a": "72 lápis de cor",
+			"b": "60 lápis de cor",
+			"c": "80 lápis de cor"
+		},
+		"resposta_verdadeira": "a"
+	}
+]

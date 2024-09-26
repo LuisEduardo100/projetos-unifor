@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjy1nn3t8jpgb"]
+
+[ext_resource type="Script" path="res://Scenes/dialogue.gd" id="1_86him"]
+[ext_resource type="Texture2D" uid="uid://bx8tiheeq07j2" path="res://Assets/dialogue_box.png" id="1_mj1lf"]
+
+[node name="Dialogue" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_86him")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 59.0
+offset_top = 30.0
+offset_right = 1103.0
+offset_bottom = 117.0
+texture = ExtResource("1_mj1lf")
+patch_margin_left = 7
+patch_margin_top = 8
+patch_margin_right = 7
+patch_margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 7.0
+offset_top = 513.0
+offset_right = 1155.0
+offset_bottom = 607.0
+theme_override_constants/separation = 140
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "A) peidei"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "b) peidei 2"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "A) peidei 3"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 69.0
+offset_top = 40.0
+offset_right = 1087.0
+offset_bottom = 108.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_button_3_pressed"]

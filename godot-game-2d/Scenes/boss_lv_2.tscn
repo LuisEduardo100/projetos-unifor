@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b27d3k77cbgnf"]
+
+[ext_resource type="Texture2D" uid="uid://cce8f5yjb8dbc" path="res://Assets/Tiles/Characters/tile_0004.png" id="1_cgmlg"]
+[ext_resource type="Texture2D" uid="uid://cje7htvdyo200" path="res://Assets/Tiles/Characters/tile_0005.png" id="2_jq17q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sv00b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cgmlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jq17q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Boss_LV_2" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sv00b")
+autoplay = "default"

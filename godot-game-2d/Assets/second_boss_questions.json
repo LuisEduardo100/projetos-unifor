@@ -1,0 +1,92 @@
+[
+	{
+		"pergunta": "Se uma garrafa pode conter 2 litros de água e você já colocou 1 litro, quanto mais de água você pode colocar?",
+		"opcoes": {
+			"a": "1 litro",
+			"b": "2 litros",
+			"c": "3 litros"
+		},
+		"resposta_verdadeira": "a"
+	},
+	{
+		"pergunta": "Se você tem uma balança e coloca 3 kg de maçãs de um lado e 2 kg de bananas do outro, qual lado vai ficar mais pesado?",
+		"opcoes": {
+			"a": "O lado das maçãs",
+			"b": "O lado das bananas",
+			"c": "Os dois lados ficarão com o mesmo peso"
+		},
+		"resposta_verdadeira": "a"
+	},
+	{
+		"pergunta": "Se um galão pode conter 5 litros de leite e você já derramou 3 litros, quanto mais de leite você pode derramar?",
+		"opcoes": {
+			"a": "1 litro",
+			"b": "2 litros",
+			"c": "3 litros"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se você tem uma jarra com capacidade para 1 litro e coloca 750 ml de suco, quanto mais suco você pode colocar?",
+		"opcoes": {
+			"a": "150 ml",
+			"b": "250 ml",
+			"c": "350 ml"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se uma caixa pode conter 10 kg de laranjas e já tem 6 kg, quanto mais de laranjas você pode colocar?",
+		"opcoes": {
+			"a": "2 kg",
+			"b": "4 kg",
+			"c": "6 kg"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se você tem uma garrafa de água de 500 ml e já bebeu 250 ml, quanto mais de água você pode beber?",
+		"opcoes": {
+			"a": "100 ml",
+			"b": "150 ml",
+			"c": "250 ml"
+		},
+		"resposta_verdadeira": "c"
+	},
+	{
+		"pergunta": "Se um tanque pode conter 1000 litros de água e já tem 800 litros, quanto mais de água você pode adicionar?",
+		"opcoes": {
+			"a": "100 litros",
+			"b": "150 litros",
+			"c": "200 litros"
+		},
+		"resposta_verdadeira": "c"
+	},
+	{
+		"pergunta": "Se você tem uma sacola que pode carregar 5 kg de batatas e já colocou 3 kg, quanto mais de batatas você pode adicionar?",
+		"opcoes": {
+			"a": "1 kg",
+			"b": "2 kg",
+			"c": "3 kg"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se um pote pode conter 2 litros de sorvete e você já serviu 1 litro, quanto mais de sorvete você pode servir?",
+		"opcoes": {
+			"a": "500 ml",
+			"b": "750 ml",
+			"c": "1 litro"
+		},
+		"resposta_verdadeira": "c"
+	},
+	{
+		"pergunta": "Se você tem uma garrafa de refrigerante de 2 litros e já bebeu 1,5 litros, quanto mais de refrigerante você pode beber?",
+		"opcoes": {
+			"a": "250 ml",
+			"b": "500 ml",
+			"c": "750 ml"
+		},
+		"resposta_verdadeira": "b"
+	}
+]

@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://qxriopmpyn0r"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_pb5v4"]
+[ext_resource type="Script" path="res://Scripts/player_animated_sprite.gd" id="2_4rx7c"]
+[ext_resource type="Texture2D" uid="uid://bl2iwmb24wbk6" path="res://Assets/Felipe-Idle.png" id="2_r5y0h"]
+[ext_resource type="Texture2D" uid="uid://c2oe2icc078hu" path="res://Assets/Felipe-Jump.png" id="3_7853j"]
+[ext_resource type="Texture2D" uid="uid://dlvcha1vwso0f" path="res://Assets/Felipe-Run1.png" id="3_pkjfg"]
+[ext_resource type="Texture2D" uid="uid://81bnyhu2xki0" path="res://Assets/Felipe-Run2.png" id="4_c7t1y"]
+[ext_resource type="Texture2D" uid="uid://cb3n0nv501c2v" path="res://Assets/Felipe-Run3.png" id="5_5qmxp"]
+[ext_resource type="Script" path="res://Scenes/Life.gd" id="8_k3gu2"]
+[ext_resource type="Texture2D" uid="uid://ddctbw27nonmf" path="res://Assets/Tiles/heart.png" id="9_1l5o2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yg64t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r5y0h")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7853j")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pkjfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c7t1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5qmxp")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kebd"]
+size = Vector2(13, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05er2"]
+size = Vector2(13, 30)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_pb5v4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yg64t")
+animation = &"run"
+script = ExtResource("2_4rx7c")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="AreaCollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_4kebd")
+
+[node name="BodyCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_05er2")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Life" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_k3gu2")
+
+[node name="Hearts" type="TextureRect" parent="UI/Life"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -209.0
+offset_top = -119.0
+offset_right = -169.0
+offset_bottom = -79.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_1l5o2")

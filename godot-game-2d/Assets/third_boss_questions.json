@@ -1,0 +1,92 @@
+[
+	{
+		"pergunta": "Se faltam 3 semanas para as férias de verão começarem, quantos dias faltam para as férias?",
+		"opcoes": {
+			"a": "20 dias",
+			"b": "21 dias",
+			"c": "23 dias"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se um ano tem 12 meses, quantos meses são equivalentes a 3 trimestres do ano?",
+		"opcoes": {
+			"a": "6 meses",
+			"b": "9 meses",
+			"c": "12 meses"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se um dia tem 24 horas, quantas horas há 4 dias?",
+		"opcoes": {
+			"a": "92 horas",
+			"b": "96 horas",
+			"c": "95 horas"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se um mês tem 30 dias, quantos dias há em 2 meses e meio?",
+		"opcoes": {
+			"a": "65 dias",
+			"b": "75 dias",
+			"c": "85 dias"
+		},
+		"resposta_verdadeira": "b"
+	},
+	{
+		"pergunta": "Se um ano tem 365 dias, quantos dias há em 2 anos?",
+		"opcoes": {
+			"a": "730 dias",
+			"b": "600 dias",
+			"c": "800 dias"
+		},
+		"resposta_verdadeira": "a"
+	},
+	{
+		"pergunta": "Se um trimestre tem 3 meses, quantos trimestres há em 1 ano?",
+		"opcoes": {
+			"a": "2 trimestres",
+			"b": "3 trimestres",
+			"c": "4 trimestres"
+		},
+		"resposta_verdadeira": "c"
+	},
+	{
+		"pergunta": "Se uma semana tem 7 dias, quantos dias há em 3 semanas e 4 dias?",
+		"opcoes": {
+			"a": "24 dias",
+			"b": "23 dias",
+			"c": "25 dias"
+		},
+		"resposta_verdadeira": "c"
+	},
+	{
+		"pergunta": "Se um mês tem 30 dias, quantos dias há em 5 meses?",
+		"opcoes": {
+			"a": "150 dias",
+			"b": "140 dias",
+			"c": "160 dias"
+		},
+		"resposta_verdadeira": "a"
+	},
+	{
+		"pergunta": "Se um mês tem 31 dias, quantos dias tem 3 meses?",
+		"opcoes": {
+			"a": "93 dias",
+			"b": "92 dias",
+			"c": "94 dias"
+		},
+		"resposta_verdadeira": "a"
+	},
+	{
+		"pergunta": "Se um dia tem 24 horas, quantas horas há em 2 dias e meio?",
+		"opcoes": {
+			"a": "48 horas",
+			"b": "56 horas",
+			"c": "60 horas"
+		},
+		"resposta_verdadeira": "c"
+	}
+]
